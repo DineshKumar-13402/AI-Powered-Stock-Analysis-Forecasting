@@ -15,7 +15,8 @@ if symbol:
 
     if not data.empty:
         st.subheader(f"Closing Price for {symbol}")
-        st.line_chart(data['Close'])
+        st.line_chart(data['Close'].squeeze())
+
 
         # Generate technical indicators
         data['RSI'] = RSIIndicator(data['Close']).rsi()

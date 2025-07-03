@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <title>AI Stock Predictor</title>
+</head>
+<body>
+    <h1>Stock Trend Prediction</h1>
+    <form method="post">
+        <label for="symbol">Enter Stock Symbol (e.g., AAPL):</label>
+        <input type="text" id="symbol" name="symbol" required>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Stock Plot"/>
+    {% endif %}
+</body>
+</html>
